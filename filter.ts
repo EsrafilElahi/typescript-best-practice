@@ -13,6 +13,8 @@ interface PersonB {
   isAdmin: boolean;
 }
 
+// test
+
 const people: Person[] = [
   { type: 'A', name: 'Alice', age: 25 },
   { type: 'B', name: 'Bob', city: 'London', isAdmin: true },
