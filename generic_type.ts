@@ -133,3 +133,4 @@ export const getDisplayName = <TItem extends Animal | Human>(item: TItem): Retur
 
 const result1 = getDisplayName({ name: 'rabbit' });
 const result2 = getDisplayName({ firstName: 'esrafil', lastName: 'elahi' });
+const result3 = getDisplayName({ firstName: 'esra', lastName: 'elahi' });
