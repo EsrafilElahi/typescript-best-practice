@@ -17,4 +17,5 @@ interface Size {
 // inside component
 <Icon size="xs" />
 <Icon size="sm" />
+<Icon size="lg" />
 <Icon size="anotherSize" />
