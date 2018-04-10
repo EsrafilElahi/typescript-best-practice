@@ -22,6 +22,7 @@ type R = { a: number }
 type MyType3<T> = T extends R ? R : never; // compare T with type R
 type T3 = MyType3<{ b: string }> // T3 is never
 
+
 // ===============================
 
 type R3 = { a: number }
