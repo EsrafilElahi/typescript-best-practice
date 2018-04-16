@@ -19,7 +19,7 @@ const obj: Settings = {
   prop: {family: 'elahi'},
   arr: [12, 23]
 }
-
+ 
 // right way
 const obj = {
   name: 'esrafil',
