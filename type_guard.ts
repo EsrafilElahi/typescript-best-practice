@@ -10,7 +10,6 @@ const getStringFromValue = <TValue extends Base>(value: TValue) => {
   return value.id;
 };
 
-
 // ==========================================================================================
 
 type Base = { id: string } | string;
