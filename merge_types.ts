@@ -24,3 +24,4 @@ export default Shape;
 // use Shape component:
 <Shape color="dark-blue"/>
 <Shape color="light-yellow"/>
+
