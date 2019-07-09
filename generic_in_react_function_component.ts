@@ -11,7 +11,6 @@ export function Table<TItem>(props: TableProps<TItem>) {
   return null
 }
 
-
 const App = () => {
   return (
     <div>
