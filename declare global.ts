@@ -8,3 +8,4 @@ decalre global {
   }
 }
 const a = window.foo()
+
