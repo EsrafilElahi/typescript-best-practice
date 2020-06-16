@@ -1,7 +1,7 @@
-import {useRef, ElementRef} from 'react';
+import { useRef, ElementRef } from "react";
 
 const Component = () => {
   const audioRef = useRef<ElementRef<"audio">>(null);
 
-  return <audio ref={audioRef}> Audio Tag </audio>
-}
+  return <audio ref={audioRef}> Audio Tag </audio>;
+};
