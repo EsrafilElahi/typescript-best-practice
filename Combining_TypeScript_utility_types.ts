@@ -18,3 +18,4 @@ const u2: RequireFields<User, 'id' | 'age'> = {
   firstname: 'Chris',
   lastname: 'Bongers',
 };
+ 
