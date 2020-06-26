@@ -30,3 +30,4 @@ const Child = (props: RightProps) => {
 const App () => {
   return <Child name="esrafil" gender="male" salary={40} />
 }
+
