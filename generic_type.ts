@@ -1,3 +1,4 @@
+
 interface IDetails {
   address: string;
 }
