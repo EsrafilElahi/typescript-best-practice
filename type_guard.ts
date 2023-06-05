@@ -109,3 +109,36 @@ const getStringFromValue = <TValue extends Base>(value: TValue) => {
 
   // do something with the object
 };
+
+
+
+export type DataTypes = Book | Movie | Laptop | string;
+
+export const isBook = (value: DataTypes): value is Book => {
+  return typeof value !== 'string' && 'id' in value && 'author' in value;
+};
+export const isMovie = (value: DataTypes): value is Movie => {
+  return typeof value !== 'string' && 'id' in value && 'releaseDate' in value && 'title' in value;
+};
+export const isLaptop = (value: DataTypes): value is Laptop => {
+  return typeof value !== 'string' && 'id' in value && 'model' in value;
+};
+
+
+const formatLabel = (value: DataTypes) => {
+  // value will be always Book here since isBook has predicate attached
+  if (isBook(value)) return value.author;
+
+  // value will be always Movie here since isMovie has predicate attached
+  if (isMovie(value)) return value.releaseDate;
+
+  // value will be always Laptop here since isLaptop has predicate attached
+  if (isLaptop(value)) return value.model;
+
+  return value;
+};
+
+// somewhere in the render
+<GenericSelect<Book> ... formatLabel={formatLabel} />
+<GenericSelect<Movie> ... formatLabel={formatLabel} />
+<GenericSelect<Laptop> ... formatLabel={formatLabel} />
