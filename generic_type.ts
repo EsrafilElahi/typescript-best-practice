@@ -61,3 +61,52 @@ const makeSet2 = <T = number>() => { // T is number type defaultly
 }
 const mySet2 = makeSet2() // makeSet2: <number>() => void ----------> defaultly is <number>
 const mySet3 = makeSet2<string>() // makeSet2: <string>() => void ----------> set <string>
+
+// ====================================================================================
+
+type Base = {
+  id: string;
+  title: string;
+};
+
+type GenericSelectProps<TValue> = {
+  values: TValue[];
+  onChange: (value: TValue) => void;
+};
+
+export const GenericSelect = <TValue extends Base>({ values, onChange }: GenericSelectProps<TValue>) => {
+  const onSelectChange = (e) => {
+    const val = values.find((value) => value.id === e.target.value);
+
+    if (val) onChange(val);
+  };
+
+  return (
+    <select onChange={onSelectChange}>
+      {values.map((value) => (
+        <option key={value.id} value={value.id}>
+          {value.title}
+        </option>
+      ))}
+    </select>
+  );
+};
+
+// This select is a "Book" type, so the value will be "Book" and only "Book"
+<GenericSelect<Book> onChange={(value) => console.log(value.author)} values={books} />
+
+// This select is a "Movie" type, so the value will be "Movie" and only "Movie"
+<GenericSelect<Movie> onChange={(value) => console.log(value.releaseDate)} values={movies} />
+
+
+export const AmazonCloneWithState = () => {
+  const [book, setBook] = useState<Book | undefined>(undefined);
+  const [movie, setMovie] = useState<Movie | undefined>(undefined);
+
+  return (
+    <>
+      <GenericSelect<Book> onChange={(value) => setMovie(value)} values={booksValues} />
+      <GenericSelect<Movie> onChange={(value) => setBook(value)} values={moviesValues} />
+    </>
+  );
+};
