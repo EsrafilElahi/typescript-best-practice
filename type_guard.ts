@@ -79,6 +79,7 @@ const Tabs = () => {
 };
 
 // =============================================================================================
+
 const allTabs = ['Books', 'Movies', 'Laptops'];
 
 type Tabs = typeof allTabs;
@@ -92,3 +93,19 @@ const allTabs3 = ['Books', 'Movies', 'Laptops'] as const;
 type TabsV = typeof allTabs3[number];
 // "Books" | "Movies" | "Laptops"
 
+// =============================================================================================
+
+type T = { id: string };
+type Base = T | string;
+
+export const isStringValue = <TValue extends T>(value: TValue | string): value is string => {
+  return typeof value === 'string';
+};
+
+const getStringFromValue = <TValue extends Base>(value: TValue) => {
+  if (isStringValue(value)) {
+    // do something with the string
+  }
+
+  // do something with the object
+};
