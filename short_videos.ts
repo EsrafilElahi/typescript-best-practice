@@ -56,7 +56,21 @@ const person3: IPartialPerson<IPerson> | IRecordPerson<string, IPerson> = {}
 
 // ========================================================================================
 
+const article = {
+  title: 'elem.js',
+  id: 23,
+  author: 'messi'
+}
 
+type ArticleType = typeof article
+// {
+//   title: string,
+//  id: number,
+//  author: string
+// }
+
+type ArticleKeys = keyof ArticleType
+// "title" | "id" | "author"
 
 // ========================================================================================
 
