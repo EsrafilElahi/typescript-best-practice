@@ -89,10 +89,11 @@ interface User {
   firstName: string;
 }
 
-
+// @ts-ignore
 axios.get<User[]>('http://localhost:8080/admin/users')
   .then(response => {
     console.log(response.data);
+    // @ts-ignore
     setUserList(response.data);
   });
 
