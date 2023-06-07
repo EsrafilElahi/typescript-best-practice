@@ -74,7 +74,17 @@ type ArticleKeys = keyof ArticleType
 
 // ========================================================================================
 
+const getData1 = (): Promise<JSON> => {
+  return fetch("api/data").then(res => res.json())
+}
 
+const getData2 = (): Promise<any> => {
+  return fetch("api/data").then(res => res.json())
+}
+
+const getData3 = async (): Awaited<Promise<JSON>> => {
+  return await fetch("api/data").then(res => res.json())
+}
 
 // ========================================================================================
 
