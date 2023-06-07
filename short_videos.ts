@@ -47,8 +47,12 @@ type IPartialPerson<T> = {
   [P in keyof T]?: T[P] | undefined
 }
 
-const person2: Partial<IPerson> = {}
-const person3: IPartialPerson<IPerson> = {}
+type IRecordPerson<K extends string | number, T> = {
+  [P in K]: T
+}
+
+const person2: Partial<IPerson> | Record<string, string | number> = {}
+const person3: IPartialPerson<IPerson> | IRecordPerson<string, IPerson> = {}
 
 // ========================================================================================
 
