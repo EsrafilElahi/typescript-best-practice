@@ -82,9 +82,19 @@ const getData2 = (): Promise<any> => {
   return fetch("api/data").then(res => res.json())
 }
 
-const getData3 = async (): Awaited<Promise<JSON>> => {
-  return await fetch("api/data").then(res => res.json())
+
+
+interface User {
+  id: number;
+  firstName: string;
 }
+
+
+axios.get<User[]>('http://localhost:8080/admin/users')
+  .then(response => {
+    console.log(response.data);
+    setUserList(response.data);
+  });
 
 // ========================================================================================
 
