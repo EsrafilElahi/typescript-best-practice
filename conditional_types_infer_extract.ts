@@ -11,9 +11,13 @@ type Events =
     type: "LOG_OUT"
   }
 
-type argsType<T> = Extract<Events, { type: T }> extends { payload: { userId: string } } ? [type: T, payload: { userId: string }] : [type: T];
+// without infer
+type argsType1<T> = Extract<Events, { type: T }> extends { payload: { userId: string } } ? [type: T, payload: { userId: string }] : [type: T];
 
-const sendEvents = <T extends Events["type"]>(...args: argsType<T>) => { };
+// with infer
+type argsType2<T> = Extract<Events, { type: T }> extends { payload: infer TPayload } ? [type: T, payload: TPayload] : [type: T];
+
+const sendEvents = <T extends Events["type"]>(...args: argsType2<T>) => { };
 
 sendEvents('LOG_OUT');
 sendEvents("LOG_IN", { userId: '12' });
