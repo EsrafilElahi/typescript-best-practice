@@ -82,21 +82,23 @@ export const GenericSelect = <TValue extends Base>({ values, onChange }: Generic
   };
 
   return (
-    <select onChange={onSelectChange}>
-      {values.map((value) => (
-        <option key={value.id} value={value.id}>
-          {value.title}
-        </option>
-      ))}
-    </select>
+    <select onChange= { onSelectChange } >
+    {
+      values.map((value) => (
+        <option key= { value.id } value = { value.id } >
+        { value.title }
+        < /option>
+      ))
+    }
+    < /select>
   );
 };
 
 // This select is a "Book" type, so the value will be "Book" and only "Book"
-<GenericSelect<Book> onChange={(value) => console.log(value.author)} values={books} />
+<GenericSelect<Book> onChange={ (value) => console.log(value.author) } values = { books } />
 
-// This select is a "Movie" type, so the value will be "Movie" and only "Movie"
-<GenericSelect<Movie> onChange={(value) => console.log(value.releaseDate)} values={movies} />
+  // This select is a "Movie" type, so the value will be "Movie" and only "Movie"
+  <GenericSelect<Movie> onChange={ (value) => console.log(value.releaseDate) } values = { movies } />
 
 
 export const AmazonCloneWithState = () => {
@@ -105,8 +107,29 @@ export const AmazonCloneWithState = () => {
 
   return (
     <>
-      <GenericSelect<Book> onChange={(value) => setMovie(value)} values={booksValues} />
-      <GenericSelect<Movie> onChange={(value) => setBook(value)} values={moviesValues} />
-    </>
+    <GenericSelect<Book> onChange= {(value) => setMovie(value)} values = { booksValues } />
+      <GenericSelect<Movie> onChange={ (value) => setBook(value) } values = { moviesValues } />
+        </>
   );
 };
+
+// ====================================================================================
+
+interface Animal {
+  name: string
+}
+
+interface Human {
+  firstName: string,
+  lastName: string
+}
+
+type ReturnFnType<T> = T extends Human ? { humanName: string } : { animalName: string }
+export const getDisplayName = <TItem extends Animal | Human>(item: TItem): ReturnFnType<TItem> => {
+  if ("name" in item) return { animalName: item.name }
+
+  return { humanName: `${item.firstName} ${item.lastName}` }
+}
+
+const result1 = getDisplayName({ name: 'rabbit' });
+const result2 = getDisplayName({ firstName: 'esrafil', lastName: 'elahi' });
