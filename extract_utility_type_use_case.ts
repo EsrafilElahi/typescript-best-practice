@@ -1,7 +1,8 @@
-type Shape = { type: 'square' } | { type: 'circle' } | { type: 'triangle' }
+type Shape = { type: 'square', num: 2 } | { type: 'circle', num: 3 } | { type: 'triangle', num: 4 }
 
-type SqaureShape1 = Extract<Shape, { type: 'square' }> // { type: 'square' }
-type SqaureShape2 = Extract<Shape, { type: 'square' | 'circle' }> // { type: 'square' } | { type: 'circle' }
+type SqaureShape1 = Extract<Shape, { type: 'square' }> // { type: 'square', num: 2 }
+type SqaureShape2 = Extract<Shape, { type: 'square' | 'circle' }> // { type: 'square', num: 2 } | { type: 'circle', num:3 }
+type SqaureShape3 = Extract<Shape, { num: 4 }> // { type: 'triangle', num:4 }
 
 
 
