@@ -11,3 +11,4 @@ const objectKeys = <Obj>(obj: Obj): (keyof Obj)[] => {
 objectKeys(myObj).forEach(item => {
   console.log(myObj[item]);
 })
+
