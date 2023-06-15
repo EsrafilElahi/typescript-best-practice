@@ -6,3 +6,4 @@ const myColor: Color = { value: 'red' };
 
 const myColor2 = { value: 'red' } satisfies Color;
 // type : {value: string}
+  
