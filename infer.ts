@@ -4,7 +4,7 @@ type T2 = MyType<{}> // T2 is { }
 
 // infer R ---> points to T => depends to T
 
-// ===============================
+// =============================== 
 
 type MyType2<T> = T extends R2 ? R2 : never; // error, R2 undeclared (undefined)
 
