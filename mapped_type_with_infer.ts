@@ -10,4 +10,4 @@ type RemoveMapFromObj<Obj> = {
 
 type DesiredShape = RemoveMapFromObj<ApiData>
 
-type ExtractLatLong<Key> = Key extends `map:${infer U}` ? U : Key
+type ExtractLatLong<Key> = Key extends `map:${infer U}` ? U : Key 
