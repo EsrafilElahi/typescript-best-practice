@@ -22,6 +22,7 @@ const badCheckState = (state: BadState1) => {
 badCheckState(100); // not error
 
 
+
 //Good ✅
 type GoodState = "InProgress" | "Success" | "Fail";
 enum GoodState2 {
