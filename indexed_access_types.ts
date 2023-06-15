@@ -12,7 +12,7 @@ type EveryColorVariants = ColorVariants[keyof ColorVariants]
 
 // letters
 type Letters = ["a", "b", "c"]
-
+ 
 type AOrB = Letters["0" | "1"]
 type AllLettersUnion = Letters[number]
 // "a" | "b" | "c"
