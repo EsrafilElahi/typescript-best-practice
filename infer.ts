@@ -1,4 +1,6 @@
-type MyType<T> = T extends infer R ? R : never;
+// * usage in conditional types
+
+type MyType<T> = T extends infer R ? R : never; // never is the type which doesn't exist
 type T1 = MyType<{ b: string }> // T1 is { b: string; }
 type T2 = MyType<{}> // T2 is { }
 
@@ -19,3 +21,13 @@ type T3 = MyType3<{ b: string }> // T3 is never
 type R3 = { a: number }
 type MyType4<T> = T extends infer R3 ? R3 : never;
 type T4 = MyType4<{ b: string }> // { b: string; }
+
+// ===============================
+
+type GetFromDeepObj<T> = T extends { a: { b: { c: infer C } } } ? C : never
+
+type GetType1 = { a: { b: { c: string } } }
+type GetFromDeepObj_Example1 = GetFromDeepObj<GetType1>
+
+type GetType2 = { a: { b: { c: number } } }
+type GetFromDeepObj_Example2 = GetFromDeepObj<GetType2>
