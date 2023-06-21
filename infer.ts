@@ -8,6 +8,12 @@ type T2 = MyType<{}> // T2 is { }
 
 // =============================== 
 
+type ArrayElementType<T> = T extends (infer E)[] ? E : T
+type item1 = ArrayElementType<number[]> // type of item1 is 'number' --> E
+type item2 = ArrayElementType<{name: string}> // type of item2 is {name: string} --> E
+
+// =============================== 
+
 type MyType2<T> = T extends R2 ? R2 : never; // error, R2 undeclared (undefined)
 
 // ===============================
