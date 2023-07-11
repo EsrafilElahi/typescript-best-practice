@@ -4,7 +4,7 @@ enum BadState1 {
   Success,
   Fail,
 }
-
+ 
 enum BadState2 {
   InProgress = 10,
   Success = 20,
