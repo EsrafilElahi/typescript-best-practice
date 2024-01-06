@@ -9,7 +9,7 @@ const myColor2 = { value: 'red' } satisfies Color;
 
 
 type Setting = string | number | {[key]: string} | Setting[];
-type Settings = Record<string, Settings>
+type Settings = Record<string, Setting>
 
 
 // wrong way
