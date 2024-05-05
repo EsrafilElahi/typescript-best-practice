@@ -5,7 +5,7 @@ type T1 = MyType<{ b: string }> // T1 is { b: string; }
 type T2 = MyType<{}> // T2 is { }
 
 // infer R ---> points to T => depends to T
-
+ 
 // =============================== 
 
 type ArrayElementType<T> = T extends (infer E)[] ? E : T
