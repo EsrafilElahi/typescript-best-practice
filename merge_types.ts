@@ -15,7 +15,7 @@ const Shape = (props:ItemProps) => {
   const chosenShape: ShapeType = "cube";
   const twoDShape: TwoDShapeType<typeof chosenShape> = "square";
 
-  return <div>Shape</div>;
+  return <div>Shape</div>; 
 };
 
 export default Shape;
