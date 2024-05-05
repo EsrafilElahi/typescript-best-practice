@@ -10,3 +10,4 @@ const keyRemover = makeKeyRemover(["a", "b"]);
 const newObject = keyRemover({ a: 1, b: 2, c: 3 });
 
 newObject.c; // just this show
+ 
