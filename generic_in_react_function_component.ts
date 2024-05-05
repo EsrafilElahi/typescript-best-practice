@@ -18,7 +18,7 @@ const App = () => {
       <Table<{ id: number, name: string }> // define TItem here
         items= { [{ id: 1, name: 'joe' }] }
         renderItem={(item) => <div>{item}</div>}
-      />
+      /> 
 
     < /div>
   )
