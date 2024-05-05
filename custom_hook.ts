@@ -5,3 +5,4 @@ const useHome = () => {
 
   return [home, setHome] as const; // fixes state type and onChange event type
 };
+ 
