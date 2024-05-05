@@ -13,7 +13,7 @@ type ItemProps = {
 
 const Shape = (props:ItemProps) => {
   const chosenShape: ShapeType = "cube";
-  const twoDShape: TwoDShapeType<typeof chosenShape> = "square";
+  const twoDShape: TwoDShapeType<typeof chosenShape> = "square"; 
 
   return <div>Shape</div>; 
 };
