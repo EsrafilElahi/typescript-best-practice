@@ -15,7 +15,7 @@ type Settings = Record<string, Setting>
 // wrong way
 const obj: Settings = {
   name: 'esrafil',
-  id: 23,
+  id: 23, 
   prop: {family: 'elahi'},
   arr: [12, 23]
 }
