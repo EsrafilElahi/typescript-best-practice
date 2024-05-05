@@ -11,7 +11,7 @@ type EveryColorVariants_Value = ColorVariants[keyof ColorVariants]; // "blue" | 
 type EveryColorVariants_Key = keyof ColorVariants; // "primary" "secondary" | "tertiary"
 
 // letters
-type Letters = ["a", "b", "c"];
+type Letters = ["a", "b", "c"]; 
 
 type AOrB = Letters["0" | "1"]; // "a" | "b"
 type AllLettersUnion = Letters[number]; // "a" | "b" | "c"
