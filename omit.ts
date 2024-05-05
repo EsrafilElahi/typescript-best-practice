@@ -9,7 +9,7 @@ type IconSize2 = tt | Omit<string, tt> ;
 type customExcludeType<T extends string> = T | Omit<string, T>
 type IconSize3 = customExcludeType<"sm" | "xs" | "md" | "lg" | "xl">
 
-
+ 
 interface Size {
   size: IconSize
 }
