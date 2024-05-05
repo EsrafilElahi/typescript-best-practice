@@ -16,7 +16,7 @@ interface PersonB {
 const people: Person[] = [
   { type: 'A', name: 'Alice', age: 25 },
   { type: 'B', name: 'Bob', city: 'London', isAdmin: true },
-  { type: 'A', name: 'Charlie', age: 30 },
+  { type: 'A', name: 'Charlie', age: 30 }, 
 ];
 
 // Example 1: Filter PersonA objects
