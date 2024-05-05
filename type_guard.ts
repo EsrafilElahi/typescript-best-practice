@@ -6,7 +6,7 @@ const getStringFromValue = <TValue extends Base>(value: TValue) => {
     return value;
   }
 
-  // here "value" will be the type of "NOT string", in our case { id: string }
+  // here "value" will be the type of "NOT string", in our case { id: string } 
   return value.id;
 };
 
