@@ -14,3 +14,4 @@ function log(msg: string, level: LogLevel) {
 
 log("hi", "WARNING"); // no err -----> //? doesn't required to export this LOG_LEVEL anywhere, we can just pass the values in params
 log("hi", LOG_LEVEL.WARNING); // we can use directly, no err too
+ 
