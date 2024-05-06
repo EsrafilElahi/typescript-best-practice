@@ -2,7 +2,7 @@
 interface IDetails {
   address: string;
 }
-
+ 
 function myFunc<Type extends IDetails>(arg: Type): Type {
   console.log(arg.address); // Now we know it has a .address property, so no more error
   return arg;
