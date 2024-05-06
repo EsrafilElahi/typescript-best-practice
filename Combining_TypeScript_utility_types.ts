@@ -4,7 +4,7 @@ interface User {
   lastname: string;
   age?: number;
 }
-
+ 
 // not reusable
 type LoggedUser1 = Partial<User> & Required<Pick<User, 'id'>>;
 type LoggedUser2 = Required<Pick<User, 'id'>> & Omit<User, 'id'>;
