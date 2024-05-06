@@ -9,7 +9,7 @@ enum BadState2 {
   InProgress = 10,
   Success = 20,
   Fail = 30,
-}
+} 
 
 BadState1.InProgress; // (enum member) State.InProgress = 0
 BadState1.Success; // (enum member) State.Success = 1
