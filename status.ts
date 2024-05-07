@@ -8,7 +8,7 @@ const REQUEST_STATUS = {
   status_success: "SUCCESS",
   status_error: "ERROR",
 };
-
+ 
 // eslint-disable-next-line no-unused-vars
 type TTest1 = typeof REQUEST_STATUS;
 /*
