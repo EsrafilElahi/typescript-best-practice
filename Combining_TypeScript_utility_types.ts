@@ -19,3 +19,15 @@ const u2: RequireFields<User, 'id' | 'age'> = {
   lastname: 'Bongers',
 };
  
+
+interface User2 {
+  id: number;
+  name?: string;
+  email?: string;
+}
+
+// Combining Partial and Required
+type UpdateUser = Required<Pick<User2, 'id'>> & Partial<Omit<User2, 'id'>>;
+// Requires 'id', allows 'name' and 'email' to be optional
+
+const updateUserData: UpdateUser = { id: 1, name: 'Alice' }; // Valid
