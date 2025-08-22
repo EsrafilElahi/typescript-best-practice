@@ -3,7 +3,7 @@ interface User {
   name: string;
   age: number;
 }
-
+ 
 // Using Pick and Omit
 type UserPreview = Pick<User, 'name' | 'age'>; // { name: string; age: number }
 type UserSensitive = Omit<User, 'age'>; // { id: number; name: string }
